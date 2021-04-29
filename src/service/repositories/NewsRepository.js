@@ -16,7 +16,10 @@ module.exports = {
         return result.map(model => model.toObject());
     },
     updateNews: async (id, news) => {
-        await NewsModel.updateOne({_id: id}, news);
+        const result = await NewsModel.updateOne({_id: id}, news);
+        if(result.n === 0) {
+            throw new DataBaseError('Essa noticia nao existe!');
+        }
     },
     deleteNews: async id => {
         const result = await NewsModel.deleteOne({_id: id});
