@@ -4,7 +4,7 @@ class NewsSerializer extends Serializer {
     constructor(contentType, extraFields = []) {
         super();
         this.contentType = contentType;
-        this.publicFields = [].concat(extraFields);
+        this.publicFields = ['imgUrl', 'title', 'description', 'category', 'url'].concat(extraFields);
     }
 }
 
