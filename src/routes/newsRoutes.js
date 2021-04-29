@@ -4,4 +4,11 @@ module.exports = app => {
     app.route('/news')
         .get(newsController.listNews)
         .post(newsController.addNews);
+
+    app.route('/news/:category')
+        .get(newsController.listTenByCategory);
+
+    app.route('/news/:id')
+        .put(newsController.updateNews)
+        .delete(newsController.deleteNews);
 };
