@@ -8,6 +8,10 @@ module.exports = {
             const categoria = req.body.queryResult.parameters.categoria;
             const news = await newsRepository.listTenByCategory(categoria);
 
+            if(news.length === 0) {
+                res.end();
+            }
+
             const elements = [];
             news.forEach(n => {
                elements.push({
