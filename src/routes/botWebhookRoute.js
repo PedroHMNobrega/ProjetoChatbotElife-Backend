@@ -1,4 +1,4 @@
-const botController = require('../controller/botController.js')
+const botController = require('../controller/botController.js');
 
 module.exports = app => {
     app.route('/botWebhook')
