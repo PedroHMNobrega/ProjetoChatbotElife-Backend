@@ -6,7 +6,7 @@ module.exports = {
         try {
             validarPin.validar(pin);
             res.status(200);
-            res.end();
+            res.json({message: "Pin valido"});
         } catch (e) {
             next(e);
         }
