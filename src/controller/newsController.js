@@ -24,15 +24,6 @@ module.exports = {
             next(error);
         }
     },
-    listTenByCategory: async (req, res, next) => {
-        try {
-            const news = await repository.listByCategory(req.params.category);
-            news.sort(sorting.sortNewsByCreationDate);
-            sendResponse(res, 200, news.slice(0, 10));
-        } catch (error) {
-            next(error);
-        }
-    },
     addNews: async (req, res, next) => {
         const {imgUrl, title, description, category, url} = req.body;
         try {
