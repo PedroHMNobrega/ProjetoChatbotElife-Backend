@@ -5,7 +5,7 @@ module.exports = {
 
         try {
             validarPin.validar(pin);
-            res.status(204);
+            res.status(200);
             res.end();
         } catch (e) {
             next(e);
