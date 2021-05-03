@@ -4,7 +4,7 @@ module.exports = {
     webhook: async (req, res) => {
         const intentName = req.body.queryResult.intent.displayName;
 
-        if(intentName === 'mostrar-categorias') {
+        if(intentName === 'mostrar-noticias') {
             const categoria = req.body.queryResult.parameters.categoria;
             const news = await newsRepository.listTenByCategory(categoria);
 
